@@ -1,10 +1,11 @@
-import React from 'react';
-import AddToy from '../Toys/Add A Toy/AddToy';
+import Banner from "../Banner/Banner";
+
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home</h1>
+            <Banner></Banner>
+            <h1>sacjsdhvasdvuavuiv</h1>
         </div>
     );
 };
