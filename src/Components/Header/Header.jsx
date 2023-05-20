@@ -3,7 +3,7 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className="nav-custom-color">
+        <div className="nav-custom-color ">
             <div className="navbar nav-width">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -25,10 +25,10 @@ const Header = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">kiddos</a>
+                  <div className="w-44"> <img src="https://i.ibb.co/7RBjwrD/Capture-removebg-preview.png" alt="" /></div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 font-[400]">
+                    <ul className="menu menu-horizontal px-1 font-[400] text-[white]">
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/allToys'}>All Toys</Link></li>
                         <li>
