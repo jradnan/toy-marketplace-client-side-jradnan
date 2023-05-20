@@ -1,9 +1,8 @@
-import React from 'react';
 
 const AllToys = () => {
     return (
         <div>
-            coming soon.........
+           <h1> coming soon.........</h1>
         </div>
     );
 };
