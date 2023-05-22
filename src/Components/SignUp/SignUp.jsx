@@ -1,10 +1,12 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser} = useContext(AuthContext);
+    const [messageError, setMessageError] = useState('');
+    const navigate = useNavigate();
 
     const handleSignUp = event =>{
         event.preventDefault()
@@ -14,16 +16,19 @@ const SignUp = () => {
         const password = form.password.value;
         console.log(password);
         console.log(name, email, password);
+        setMessageError("");
         createUser(email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
             console.log(user);
+            navigate('/')
             // ...
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            setMessageError(errorMessage)
             console.log(errorCode, errorMessage);
             // ..
           });
@@ -38,24 +43,25 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="name" className="input input-bordered" />
+                            <input  required type="text" name="name" placeholder="name" className="input input-bordered" />
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                            <input required type="text" name="email" placeholder="email" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name="password" placeholder="password" className="input input-bordered" />
+                            <input required type="text" name="password" placeholder="password" className="input input-bordered" />
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="text" name="photo" placeholder="URL" className="input input-bordered" />
+                            <input  type="text" name="photo" placeholder="URL" className="input input-bordered" />
                             <label className="label">
                                 <h6>All Ready Register? Please <Link to={'/login'}><span className='font-[600] text-[#B8D4C6]'>Login</span></Link></h6>
                             </label>
+                            <p className='text-[red] mt-6 text-center'>{messageError}</p>
                         </div>
                         <div className="form-control mt-6">
                             <button className="py-3 rounded-lg font-medium bg-[#B8D4C6] ">Sign Up</button>
