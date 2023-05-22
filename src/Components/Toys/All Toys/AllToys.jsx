@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
+import ToysCard from "./ToysCard";
 
 const AllToys = () => {
+    const [toys, setToys] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/allToy')
+        .then(res => res.json())
+        .then(data => setToys(data))
+    },[])
+
     return (
         <div>
-           <h1> coming soon.........</h1>
+            {
+                toys.map(toy=> <ToysCard key={toy._id} toy={toy}></ToysCard>)
+            }
         </div>
     );
 };
