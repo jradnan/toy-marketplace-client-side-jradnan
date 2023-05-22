@@ -13,6 +13,7 @@ import AddToy from './Components/Toys/Add A Toy/AddToy.jsx';
 import Login from './Components/Login/Login.jsx';
 import SignUp from './Components/SignUp/Signup.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import Blogs from './Components/Blogs/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:'/signUp',
         element:<SignUp></SignUp>
+      },
+      {
+        path:'/blogs',
+        element:<Blogs></Blogs>
       }
     ]
   },

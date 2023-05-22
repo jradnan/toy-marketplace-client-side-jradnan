@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import './Login.css'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
     const {signIn} = useContext(AuthContext)
+    const [messageError, setMessageError] = useState('');
+    const [success, setSuccess] = useState('');
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target;
@@ -11,16 +13,20 @@ const Login = () => {
         const password = form.password.value;
       
         console.log(email, password);
+        setMessageError("");
+        setSuccess("");
         signIn(email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
             console.log(user);
+            setSuccess("Successfully logged in")
             // ...
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            setMessageError(errorMessage);
             console.log(errorCode, errorMessage);
           });
     }
@@ -41,9 +47,12 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                            
                             <label className="label">
                                 <h6>New Here? Please <Link to={'/signUp'}><span className='font-[600] text-[#B8D4C6]'>Register</span></Link></h6>
                             </label>
+                            <p className='text-[red] mt-6 text-center'>{messageError}</p>
+                            <p className='text-[green] text-center'>{success}</p>
                         </div>
                         <div className="form-control mt-6">
                             <button className="py-3 rounded-lg font-medium bg-[#B8D4C6] ">Login</button>
