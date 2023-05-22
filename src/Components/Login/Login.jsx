@@ -2,11 +2,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../Firebase/firebase.init';
 const Login = () => {
     const {signIn} = useContext(AuthContext)
     const [messageError, setMessageError] = useState('');
     const [success, setSuccess] = useState('');
     const location = useLocation();
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate()
     const handleLogin = event =>{
@@ -33,6 +37,17 @@ const Login = () => {
             setMessageError(errorMessage);
             console.log(errorCode, errorMessage);
           });
+    }
+    const handGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const profile = result.user;
+                navigate(from, { replace: true })
+                console.log(profile);
+            })
+            .catch(error => {
+                setMessageError(error.message)
+            })
     }
     return (
         <div className="hero min-h-screen ">
@@ -63,7 +78,7 @@ const Login = () => {
                             <h1 className='text-center mt-8'>..................................OR...............................</h1>
                         </div>
                         <div className='text-center p-3 bg-gradient-to-r from-red-600 via-amber-400
-                        to-blue-700  my-6 rounded-xl w-full'><h1 className='text-[white] font-bold cursor-pointer'>GOOGLE</h1></div>
+                        to-blue-700  my-6 rounded-xl w-full'><h1 onClick={handGoogleSignIn}  className='text-[white] font-bold cursor-pointer'>GOOGLE</h1></div>
                    
                 </form>
             </div>
