@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const AddToy = () => {
     const {user} = useContext(AuthContext)
 
-    const handleAddCoffee = event => {
+    const handleAddToy = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -46,7 +46,7 @@ const AddToy = () => {
     return (
         <div className="bg-[#B8D4C6] p-24">
             <h2 className="text-3xl font-extrabold">Add a Toy</h2>
-            <form onSubmit={handleAddCoffee}>
+            <form onSubmit={handleAddToy}>
                 {/* form name and price row */}
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">

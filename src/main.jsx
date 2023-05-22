@@ -15,6 +15,7 @@ import SignUp from './Components/SignUp/Signup.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Blogs from './Components/Blogs/Blogs.jsx';
 import PrivateRoute from './Components/PrivateRote/PrivateRoute.jsx';
+import UpdatedToy from './Components/Toys/My Toys/UpdatedToy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
       {
         path:'/blogs',
         element:<Blogs></Blogs>
+      },
+      {
+        path:'/updateToy/:id',
+        element:<UpdatedToy></UpdatedToy>,
+        loader:({params}) => fetch(`http://localhost:5000/allToy/${params.id}`)
       }
     ]
   },
