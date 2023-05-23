@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext)
-    
+
 
     const handleLogout = () => {
         logOut()
@@ -48,12 +48,14 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1 font-[400] text-[white]">
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/allToys'}>All Toys</Link></li>
-                        <li>
+                        { user?<> <li>
                             <Link to={'/myToys'}>My Toys</Link>
                         </li>
-                        <li>
-                            <Link to={'/addToy'}>Add A Toy</Link>
-                        </li>
+                            <li>
+                                <Link to={'/addToy'}>Add A Toy</Link>
+                            </li>
+
+                        </>:""}
 
                         <li>
                             <Link to={'/blogs'}>Blogs</Link>
