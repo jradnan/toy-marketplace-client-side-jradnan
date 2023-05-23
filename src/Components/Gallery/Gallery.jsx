@@ -2,7 +2,7 @@
 const Gallery = () => {
     return (
         <div className="mt-10 mx-10">
-            <h1 className="lg:text-[68px] text-[40px] text-center  md:text-[68px] text-[black] font-bold ">Gallery
+            <h1 className="lg:text-[48px] text-[40px] text-center  md:text-[68px] text-[black] font-bold ">Gallery
         
             </h1>
             <div className="grid lg:grid-cols-3 md:grid-cols-2">

@@ -54,12 +54,12 @@ const router = createBrowserRouter([
       {
         path:'/updateToy/:id',
         element:<UpdatedToy></UpdatedToy>,
-        loader:({params}) => fetch(`https://y-mbff8sd27-afridimhrj10-gmailcom.vercel.app/allToy/${params.id}`)
+        loader:({params}) => fetch(`https://y-xi-indol.vercel.app/allToy/${params.id}`)
       },
       {
         path:'/toyDetails/:id',
         element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader:({params}) => fetch(`https://y-mbff8sd27-afridimhrj10-gmailcom.vercel.app/allToy/${params.id}`)
+        loader:({params}) => fetch(`https://y-xi-indol.vercel.app/allToy/${params.id}`)
       }
     ]
   },

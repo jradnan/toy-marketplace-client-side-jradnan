@@ -4,7 +4,7 @@ import ToysCard from "./ToysCard";
 const AllToys = () => {
     const [toys, setToys] = useState([]);
     useEffect(()=>{
-        fetch('https://y-mbff8sd27-afridimhrj10-gmailcom.vercel.app/allToy')
+        fetch('https://y-xi-indol.vercel.app/allToy')
         .then(res => res.json())
         .then(data => setToys(data))
     },[])

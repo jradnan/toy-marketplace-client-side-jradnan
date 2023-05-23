@@ -25,7 +25,7 @@ const AddToy = () => {
         console.log(addToy);
 
         // send data to the server
-        fetch('https://y-mbff8sd27-afridimhrj10-gmailcom.vercel.app/addToy', {
+        fetch('https://y-xi-indol.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

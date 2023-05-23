@@ -7,7 +7,7 @@ const MyToys = () => {
 
     const {user } = useContext(AuthContext);
     const [toyData, setToyData] = useState([])
-    const url = `https://y-mbff8sd27-afridimhrj10-gmailcom.vercel.app/allToy?email=${user.email}`;
+    const url = `https://y-xi-indol.vercel.app/allToy?email=${user.email}`;
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())
