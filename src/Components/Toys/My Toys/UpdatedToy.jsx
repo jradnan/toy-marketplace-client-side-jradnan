@@ -135,7 +135,7 @@ const UpdatedToy = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Add Toy" className="bg-[#38797B] text-[white] py-3 rounded-xl cursor-pointer btn-block" />
+                    <input type="submit" value="Update Toy" className="bg-[#38797B] text-[white] py-3 rounded-xl cursor-pointer btn-block" />
 
                 </form>
             </div>

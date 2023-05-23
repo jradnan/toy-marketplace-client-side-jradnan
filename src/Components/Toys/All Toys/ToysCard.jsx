@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 
 const ToysCard = ({toy}) => {
-    console.log(toy);
-    const {photo,name,seller,email,subCategory,price,rating,details,quantity} = toy;
+    const {photo,name,seller,email,subCategory,price,rating,details,quantity, _id} = toy;
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -51,7 +51,7 @@ const ToysCard = ({toy}) => {
                             {quantity}
                         </td>
                         <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
+                           <Link to={`/toyDetails/${_id}`}> <button className="btn btn-ghost btn-xs">details</button></Link>
                         </th>
                     </tr>
                 </tbody>
