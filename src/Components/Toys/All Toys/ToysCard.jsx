@@ -36,7 +36,7 @@ const ToysCard = ({toy}) => {
                                 </div>
                                 <div>
                                     <div className="font-bold">{name}</div>
-                                    <div className="text-sm opacity-50">United States</div>
+                                   
                                 </div>
                             </div>
                         </td>

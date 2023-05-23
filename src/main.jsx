@@ -17,11 +17,13 @@ import Blogs from './Components/Blogs/Blogs.jsx';
 import PrivateRoute from './Components/PrivateRote/PrivateRoute.jsx';
 import UpdatedToy from './Components/Toys/My Toys/UpdatedToy.jsx';
 import ToyDetails from './Components/Toys/ToyDetils/ToyDetails.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:'/',
