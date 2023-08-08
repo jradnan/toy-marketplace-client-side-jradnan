@@ -54,7 +54,7 @@ const AddToy = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" placeholder="Name"  className="input input-bordered w-full" />
+                            <input type="text" required name="name" placeholder="Name"  className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -62,7 +62,7 @@ const AddToy = () => {
                             <span className="label-text">Price</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="text" name="price" required placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const AddToy = () => {
                             <span className="label-text">Seller Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="seller" defaultValue={user?.displayName} placeholder="Seller Name" className="input input-bordered w-full" />
+                            <input type="text" required name="seller" defaultValue={user?.displayName} placeholder="Seller Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -92,7 +92,7 @@ const AddToy = () => {
                             <span className="label-text">Sub-category</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="category" placeholder="Sub-category" className="input input-bordered w-full" />
+                            <input required type="text" name="category" placeholder="Sub-category" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -100,7 +100,7 @@ const AddToy = () => {
                             <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            <input required type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ const AddToy = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full" />
+                            <input required type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -119,7 +119,7 @@ const AddToy = () => {
                             <span className="label-text">Detail description</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="details" placeholder="Detail description" className="input input-bordered w-full" />
+                            <input required type="text" name="details" placeholder="Detail description" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -130,7 +130,7 @@ const AddToy = () => {
                             <span className="label-text">Photo URL</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
+                            <input required type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
