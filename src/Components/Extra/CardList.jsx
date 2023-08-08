@@ -29,8 +29,8 @@ const CardList = () => {
 
     return (
         <>
-            <div className='lg:px-20'>
-                <img src="https://cdn.shoplightspeed.com/shops/605879/files/23352495/pendant-flag-announcement-banner.png" alt="" />
+            <div className='flex justify-center'>
+                <img src="https://i.ibb.co/xS7RWVQ/pendant-flag-announcement-banner-removebg-preview.png" alt="" />
             </div>
             <h1 className="lg:text-4xl md:text-5xl text-3xl  lg:ml-28 ml-16 md:ml-20 font-bold text-black ">Store</h1>
 
