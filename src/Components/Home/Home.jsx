@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import CardList from "../Extra/CardList";
 import Featured from "../Featured/Featured";
 import Gallery from "../Gallery/Gallery";
 import Testimonials from "../Testimonials/Testimonials";
@@ -10,8 +11,8 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <Testimonials></Testimonials>
-            <Featured></Featured>
-            
+            <CardList></CardList>
+            <Featured></Featured>          
            
         </div>
     );
