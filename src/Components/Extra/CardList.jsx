@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Card = ({ imageSrc, name, price }) => {
     return (
@@ -29,9 +29,12 @@ const CardList = () => {
 
     return (
         <>
-            <h1 className="lg:text-4xl md:text-5xl text-3xl my-14 lg:ml-28 ml-16 md:ml-20 font-bold text-black ">Store</h1>
+            <div className='lg:px-20'>
+                <img src="https://cdn.shoplightspeed.com/shops/605879/files/23352495/pendant-flag-announcement-banner.png" alt="" />
+            </div>
+            <h1 className="lg:text-4xl md:text-5xl text-3xl  lg:ml-28 ml-16 md:ml-20 font-bold text-black ">Store</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 {cards.map(card => (
                     <Card key={card.id} name={card.name} price={card.price} imageSrc={card.imageSrc} />
                 ))}
